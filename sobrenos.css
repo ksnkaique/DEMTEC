@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.verde {
+    background-color: #00BF63;
+    height: 30px;
+    width: 100%;
+}
+
+#menu {
+    width: 100%;
+    height: 150px;
+    background-color: #f3efef;
+}
+
+#menuflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#itensmenu ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    width: 1200px;
+}
+
+#itensmenu li {
+    font-size: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#pagatual span{
+    color: #00BF63;
+ 
+}
+
+#itensmenu a { 
+    color: black;
+}
+
+#svg {
+    position: relative;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#svg svg {
+    width: 30px;
+    transition: .3s;
+}
+
+#svg svg:hover {
+    fill: #1872a3;
+}
+
+#dropmenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid black;
+    width: 300px;
+    background-color: #D9D9D9;
+    z-index: 1;
+}
+
+#svg:hover #dropmenu {
+    display: block;
+}
+
+#fotoperfil {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: gray;
+    margin: 20px auto;
+}
+
+#droplista {
+    list-style: none;
+    padding: 0 20px;
+}
+
+#droplista h1 {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#droplista li {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+#libaixo {
+    margin-top: 60px;
+}
+
+#banner{
+    background-color: #00BF63;
+    width: 100%;
+    height: 500px;
+}
+
+#itensbanner h1{
+    font-size: 60px;
+    text-align: center;
+    padding-top: 50px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#itensbanner p{
+    font-size: 25px;
+    text-align: center;
+    padding-top: 60px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#itensbanner span{
+    color: #0067a0;
+    font-weight: 700;
+}
+
+#itensbanner button{
+    background-color: transparent;
+    width: 300px;
+    height: 70px;
+    border-color: #f3efef;
+    border-width: 3px;
+    font-size: 30px;
+    color: white;
+    font-family: 'Heebo', sans-serif;
+    margin-top: 3%;
+    border-radius: 25px;
+    margin-left: 42%; 
+}
+
+#conteudoc{
+    display: flex;
+    justify-content: center;
+    padding-top: 3%;
+}
+
+#conteudoc h1{
+    font-size: 30px;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#carousel{
+    background-color: #BFD9E7;
+    width: 1200px;
+    height: 400px;
+    margin-top: 5%;
+    margin-left: 370px;
+}
+
+#textoc{
+    font-size: 35px;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 10%;
+}
+
+#carousel button {
+    margin-top: 50px;
+    cursor: pointer;
+    bottom: 250px; 
+    z-index: 2;
+    padding: 10px 15px; 
+    background-color: #ffffff; 
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; 
+}
+
+#btns{
+    margin-left: 45%;
+}
+
+#redes svg{
+    width: 60px;
+    height: 60px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+#redes{
+    display: flex;
+    margin-top: 5%;
+    justify-content: center;
+}
+
+.verde2{
+    background-color: #00BF63;
+    height: 65px;
+    width: 100%;
+    margin-top: 5%;
+}
+
+#byF{
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-top: 1%;
+}
