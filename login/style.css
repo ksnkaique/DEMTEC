@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.verde{
+    background-color: #00BF63;
+    height: 30px;
+    width: 100%;
+}
+
+#meio{
+    width: 500px;
+    margin-left: 36.7%;
+    margin-top: 6.5%;
+    margin-bottom: 8%;
+}
+
+#logo{
+    width: 500px;
+    height: 450px;
+}
+
+#logo img{
+    width: 500px;
+    height: 450px;
+}
+
+#logar{
+    display: flex;
+    flex-direction: column;
+}
+
+#logar input{
+    background-color: transparent;
+    font-size: 20px;
+    color: #00BF63;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+    border-color: #00BF63;
+    height: 60px; 
+    width: 500px;
+}
+
+#logar button{
+    background-color: #1872a3;
+    width: 500px;
+    height: 30px;
+    border-color: #1872a3 ;
+    border-width: 1px;
+    font-size: 20px;
+    color: black;
+    font-family: 'Heebo', sans-serif;
+    margin-right: 6px;
+    margin-top: 13%;
+}
+
+#logar h1{
+    font-size: 15px;
+    padding-top: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 35%;
+    color: #1872a3;
+}
+
+.verde2{
+    background-color: #00BF63;
+    height: 65px;
+    width: 100%;
+}
+
+#byF{
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-top: 1%;
+}
+
+@media only screen and (max-width: 550px){
+    #meio{
+        width: 100%;
+        margin-left: 0%;
+        margin-top: 0%;
+        margin-bottom: 0%;
+    }
+    
+    #logo{
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    #logo img{
+        width: 180px;
+        height: 170px;
+    }
+    
+    #logar input{
+        font-size: 15px;
+        border-color: #00BF63;
+        height: 60px; 
+        width: 100%;
+    }
+    
+    #logar button{
+        background-color: #1872a3;
+        width: 100%;
+        height: 30px;
+        font-size: 15px;
+        margin-right: 0px;
+        margin-top: 8%;
+    }
+    
+    #logar h1{
+        font-size: 12px;
+        padding-top: 5%;
+        margin-left: 0%;
+        margin-bottom: 20%;
+    }
+    
+
+    .verde2 {
+        height: 28px;
+        margin-top: 10%;
+    }
+    
+    #byF {
+        font-size: 15px;
+        padding-top: 0%;
+        padding: 1%;
+    }
+}
