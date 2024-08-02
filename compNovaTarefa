@@ -1,0 +1,174 @@
+import '/backend/supabase/supabase.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'comp_nova_tarefa_model.dart';
+export 'comp_nova_tarefa_model.dart';
+
+class CompNovaTarefaWidget extends StatefulWidget {
+  const CompNovaTarefaWidget({
+    super.key,
+    required this.pmtData,
+  });
+
+  final DateTime? pmtData;
+
+  @override
+  State<CompNovaTarefaWidget> createState() => _CompNovaTarefaWidgetState();
+}
+
+class _CompNovaTarefaWidgetState extends State<CompNovaTarefaWidget> {
+  late CompNovaTarefaModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => CompNovaTarefaModel());
+
+    _model.txtTarefaTextController ??= TextEditingController();
+    _model.txtTarefaFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _model.maybeDispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 230,
+      decoration: BoxDecoration(
+        color: FlutterFlowTheme.of(context).secondaryBackground,
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(0),
+          bottomRight: Radius.circular(0),
+          topLeft: Radius.circular(25),
+          topRight: Radius.circular(25),
+        ),
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(25),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Container(
+              width: 100,
+              height: 10,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).primary,
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+            Text(
+              'Nova Tarefa',
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0,
+                  ),
+            ),
+            TextFormField(
+              controller: _model.txtTarefaTextController,
+              focusNode: _model.txtTarefaFocusNode,
+              autofocus: true,
+              obscureText: false,
+              decoration: InputDecoration(
+                labelText: 'Tarefa',
+                labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0,
+                    ),
+                hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0,
+                    ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).primary,
+                    width: 1,
+                  ),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).primary,
+                    width: 1,
+                  ),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).error,
+                    width: 1,
+                  ),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).error,
+                    width: 1,
+                  ),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0,
+                  ),
+              maxLines: 2,
+              validator:
+                  _model.txtTarefaTextControllerValidator.asValidator(context),
+            ),
+            FFButtonWidget(
+              onPressed: () async {
+                await TarefasTable().insert({
+                  'titulo': _model.txtTarefaTextController.text,
+                  'data': supaSerialize<DateTime>(widget!.pmtData),
+                });
+                Navigator.pop(context);
+              },
+              text: 'Adicionar',
+              icon: Icon(
+                Icons.add,
+                size: 15,
+              ),
+              options: FFButtonOptions(
+                width: double.infinity,
+                height: 44,
+                padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                color: FlutterFlowTheme.of(context).primary,
+                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                      fontFamily: 'Readex Pro',
+                      color: Colors.white,
+                      letterSpacing: 0,
+                    ),
+                elevation: 3,
+                borderSide: BorderSide(
+                  color: Colors.transparent,
+                  width: 1,
+                ),
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+          ].divide(SizedBox(height: 8)),
+        ),
+      ),
+    );
+  }
+}
